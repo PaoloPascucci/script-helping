@@ -11,8 +11,9 @@ function largest(numbers) {
   function search(larg, arr) {
     if (arr.length > 0) {
       if (arr[0] > larg) {
+        maxN = arr[0]
         arr.splice(0, 1)
-        return search(arr[0], arr);
+        return search(maxN, arr);
       } else {
         arr.splice(0, 1)
         return search(larg, arr);;
