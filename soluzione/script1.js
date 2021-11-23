@@ -11,10 +11,11 @@ function largest(numbers) {
   function search(larg, arr) {
     if (arr.length > 0) {
       if (arr[0] > larg) {
-        return search(arr[0], Math.max.apply(null, numbers));
-
+        arr.splice(0, 1)
+        return search(arr[0], arr);
       } else {
-        return search(larg, Math.max.apply(null, numbers));
+        arr.splice(0, 1)
+        return search(larg, arr);;
       }
     } else {
       return larg;
